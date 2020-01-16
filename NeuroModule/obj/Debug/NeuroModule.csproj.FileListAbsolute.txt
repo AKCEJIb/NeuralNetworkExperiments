@@ -1,0 +1,5 @@
+C:\Users\admin\source\repos\NeuralNetworkExperiments\NeuroModule\bin\Debug\NeuroModule.dll
+C:\Users\admin\source\repos\NeuralNetworkExperiments\NeuroModule\bin\Debug\NeuroModule.pdb
+C:\Users\admin\source\repos\NeuralNetworkExperiments\NeuroModule\obj\Debug\NeuroModule.dll
+C:\Users\admin\source\repos\NeuralNetworkExperiments\NeuroModule\obj\Debug\NeuroModule.pdb
+C:\Users\admin\source\repos\NeuralNetworkExperiments\NeuroModule\obj\Debug\NeuroModule.csprojAssemblyReference.cache
