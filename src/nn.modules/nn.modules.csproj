@@ -7,9 +7,9 @@
     <ProjectGuid>{601B8BC0-79BF-4A3F-A64E-FF6C7B8BAC60}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NeuroModule</RootNamespace>
-    <AssemblyName>NeuroModule</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>nn.modules</RootNamespace>
+    <AssemblyName>nn.modules</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -42,11 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MatrixClass\Matrix.cs" />
+    <Compile Include="Layers\ILayer.cs" />
+    <Compile Include="Layers\LayerLinear.cs" />
+    <Compile Include="Matrix.cs" />
     <Compile Include="EventArgs\EpochDoneEventArgs.cs" />
-    <Compile Include="NeuralNetworkBuilder\Layer.cs" />
-    <Compile Include="NeuralNetworkBuilder\NeuralNetwork.cs" />
-    <Compile Include="NeuralNetworkBuilder\Neuron.cs" />
+    <Compile Include="Layers\NeuralNetwork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

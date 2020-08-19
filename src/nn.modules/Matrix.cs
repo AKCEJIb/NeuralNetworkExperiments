@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NeuroModule.MatrixClass
+namespace nn.modules
 {
     /// <summary>
     /// Вспомогательный класс для нейронных сетей.
