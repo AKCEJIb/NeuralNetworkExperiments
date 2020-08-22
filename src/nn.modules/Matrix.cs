@@ -168,6 +168,22 @@ namespace nn.modules
 
             return result;
         }
+
+        /// <summary>
+        /// Создаёт <see cref="Matrix"/> размером rows * cols заполненный случайными значениями в указанном диапазоне.
+        /// </summary>
+        /// <param name="rows">Количество строк.</param>
+        /// <param name="cols">Количество столбцов.</param>
+        /// <param name="min">Нижняя граница рандома.</param>
+        /// <param name="max">Верхняя граница рандома.</param>
+        /// <returns>Результирующая матрица <see cref="Matrix"/></returns>
+        public static Matrix CreateRandom(int rows, int cols, double min, double max)
+        {
+            var result = new Matrix(rows, cols);
+            result.Action((i, j) => result[i, j] = _rand.NextDouble() * (max - min) + min);
+
+            return result;
+        }
         /// <summary>
         /// Транспонирует текущую матрицу.
         /// </summary>
@@ -182,7 +198,7 @@ namespace nn.modules
         {
             if (matrix.Rows != matrix2.Rows || matrix.Cols != matrix2.Cols)
             {
-                throw new ArgumentException("matrixes dimensions should be equal");
+                throw new ArgumentException("Размеры матриц должны быть равны.");
             }
             var result = new Matrix(matrix.Rows, matrix.Cols);
             result.Action((i, j) =>
@@ -264,7 +280,7 @@ namespace nn.modules
         {
             if (matrix.Rows != matrix2.Rows || matrix.Cols != matrix2.Cols)
             {
-                throw new ArgumentException("matrixes dimensions should be equal");
+                throw new ArgumentException("Размеры матриц должны быть равны.");
             }
             var result = new Matrix(matrix.Rows, matrix.Cols);
             result.Action((i, j) => result[i, j] = matrix[i, j] + matrix2[i, j]);
@@ -290,6 +306,16 @@ namespace nn.modules
         {
             return matrix + -value;
         }
+
+        /// <summary>
+        /// Позволяет установить сид для генерации рандомных массивов.
+        /// </summary>
+        /// <param name="seed">Сид.</param>
+        public static void SetRandomSeed(int seed)
+        {
+            _rand = new Random(seed);
+        }
+
         #endregion
 
 
@@ -308,6 +334,10 @@ namespace nn.modules
         /// Возвращает транспонированную матрицу.
         /// </summary>
         public Matrix T { get => this.Transpose(); }
+        /// <summary>
+        /// Возвращает размер матрицы.
+        /// </summary>
+        public (int rows, int cols) Size => (rows: Rows, cols: Cols);
         #endregion
 
         #region Private Methods

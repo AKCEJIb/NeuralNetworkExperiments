@@ -42,11 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Layers\ILayer.cs" />
+    <Compile Include="ILearningError.cs" />
+    <Compile Include="INeuralNetwork.cs" />
+    <Compile Include="IOptimizer.cs" />
+    <Compile Include="LearningErrors\MSE.cs" />
+    <Compile Include="MatrixExtensions.cs" />
+    <Compile Include="Layer.cs" />
     <Compile Include="Layers\LayerLinear.cs" />
     <Compile Include="Matrix.cs" />
     <Compile Include="EventArgs\EpochDoneEventArgs.cs" />
     <Compile Include="Layers\NeuralNetwork.cs" />
+    <Compile Include="Networks\LinearNetwork.cs" />
+    <Compile Include="Optimizers\SGD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
